@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "Proxy Service API",
+    "_postman_id": "your-postman-collection-id",
+    "description": "API for the Proxy Service to forward requests to registered services.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Available Services",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"endpoint_service_name\": \"websocket-listener-service\", \"endpoint_path\": \"/get_registered_services\", \"endpoint_request_type\": \"GET\", \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"}"
+        },
+        "url": {
+          "raw": "https://katydid-glorious-slightly.ngrok-free.app/proxy",
+          "protocol": "https",
+          "host": ["katydid-glorious-slightly.ngrok-free.app"],
+          "path": ["proxy"]
+        }
+      },
+      "response": [],
+      "description": "This request lists all available services registered with the websocket-listener-service."
+    },
+    {
+      "name": "Attempt to Execute Command",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"endpoint_service_name\": \"command-service\", \"endpoint_path\": \"/execute-bash\", \"endpoint_request_type\": \"POST\", \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\", \"endpoint_body\": {\"command\": \"for file in $(ls command_service/*.py); do echo $file; grep -E def  $file; done\", \"path\": \".\"}}"
+        },
+        "url": {
+          "raw": "https://katydid-glorious-slightly.ngrok-free.app/proxy",
+          "protocol": "https",
+          "host": ["katydid-glorious-slightly.ngrok-free.app"],
+          "path": ["proxy"]
+        }
+      },
+      "response": [],
+      "description": "This request attempts to execute a bash command on the command-service."
+    },
+    {
+      "name": "Verify Registered Services Again",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"endpoint_service_name\": \"websocket-listener-service\", \"endpoint_path\": \"/get_registered_services\", \"endpoint_request_type\": \"GET\", \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"}"
+        },
+        "url": {
+          "raw": "https://katydid-glorious-slightly.ngrok-free.app/proxy",
+          "protocol": "https",
+          "host": ["katydid-glorious-slightly.ngrok-free.app"],
+          "path": ["proxy"]
+        }
+      },
+      "response": [],
+      "description": "This request re-verifies the registered services to ensure the current state of available services."
+    }
+  ]
+}

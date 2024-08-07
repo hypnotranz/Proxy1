@@ -1,0 +1,304 @@
+2024-08-02 12:30:24,779 custom_logger INFO Starting the application
+2024-08-02 12:30:24,884 custom_logger INFO Entering register_service
+2024-08-02 12:30:24,887 custom_logger INFO Registering service with the proxy...{'service_name': 'command-service', 'openapi_url': 'http://0.0.0.0:8014/openapi.json', 'openapi_json': None}
+2024-08-02 12:30:24,944 custom_logger INFO Service registered successfully with the proxy.
+2024-08-02 12:30:24,945 custom_logger INFO Exiting register_service
+2024-08-02 12:30:56,862 custom_logger INFO Starting the application
+2024-08-02 12:30:56,957 custom_logger INFO Entering register_service
+2024-08-02 12:30:56,960 custom_logger INFO Registering service with the proxy...{'service_name': 'command-service', 'openapi_url': 'http://0.0.0.0:8014/openapi.json', 'openapi_json': None}
+2024-08-02 12:30:57,047 custom_logger INFO Service registered successfully with the proxy.
+2024-08-02 12:30:57,048 custom_logger INFO Exiting register_service
+2024-08-02 12:31:04,576 custom_logger INFO Handling command: cat << EOF > /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/README.md
+# Proxy Services
+
+This project includes multiple services managed with Docker Compose.
+
+## Setup
+
+1. Ensure Docker and Docker Compose are installed.
+2. Clone the repository.
+3. Navigate to the project root directory.
+
+```sh
+ git clone <repository_url>
+ cd Proxy_Services
+```
+
+## Running the Services
+
+To build and start all services, run:
+
+```sh
+ docker-compose up --build
+```
+
+## Services
+
+- **Proxy Service**: Runs on port 8080.
+- **WebSocket Listener Service**: Runs on port 8002.
+- **Command Service**: Runs on port 8001.
+- **Elasticsearch**: Runs on port 9200.
+
+## Stopping the Services
+
+To stop all services, run:
+
+```sh
+ docker-compose down
+```
+
+## Manually Running Services
+
+If you prefer to run services manually without Docker Compose, follow these steps:
+
+1. **Start Proxy Service**
+
+```sh
+ cd proxy_service
+ python proxy.py
+```
+
+2. **Start WebSocket Listener Service**
+
+```sh
+ cd websocket_listener_service
+ python -m websocket_listener_service.main
+```
+
+3. **Start Command Service**
+
+```sh
+ cd command_service
+ python -m main
+```
+EOF in path: .
+2024-08-02 12:31:04,577 custom_logger INFO Running command: cat << EOF > /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/README.md
+# Proxy Services
+
+This project includes multiple services managed with Docker Compose.
+
+## Setup
+
+1. Ensure Docker and Docker Compose are installed.
+2. Clone the repository.
+3. Navigate to the project root directory.
+
+```sh
+ git clone <repository_url>
+ cd Proxy_Services
+```
+
+## Running the Services
+
+To build and start all services, run:
+
+```sh
+ docker-compose up --build
+```
+
+## Services
+
+- **Proxy Service**: Runs on port 8080.
+- **WebSocket Listener Service**: Runs on port 8002.
+- **Command Service**: Runs on port 8001.
+- **Elasticsearch**: Runs on port 9200.
+
+## Stopping the Services
+
+To stop all services, run:
+
+```sh
+ docker-compose down
+```
+
+## Manually Running Services
+
+If you prefer to run services manually without Docker Compose, follow these steps:
+
+1. **Start Proxy Service**
+
+```sh
+ cd proxy_service
+ python proxy.py
+```
+
+2. **Start WebSocket Listener Service**
+
+```sh
+ cd websocket_listener_service
+ python -m websocket_listener_service.main
+```
+
+3. **Start Command Service**
+
+```sh
+ cd command_service
+ python -m main
+```
+EOF in path: .
+2024-08-02 12:31:04,588 custom_logger ERROR Command execution failed: /bin/sh: 3: Syntax error: newline unexpected
+
+2024-08-02 12:31:47,478 custom_logger INFO Handling command: cat > /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/README.md << 'EOF'
+# Proxy Services
+
+This project includes multiple services managed with Docker Compose.
+
+## Setup
+
+1. Ensure Docker and Docker Compose are installed.
+2. Clone the repository.
+3. Navigate to the project root directory.
+
+```sh
+ git clone <repository_url>
+ cd Proxy_Services
+```
+
+## Running the Services
+
+To build and start all services, run:
+
+```sh
+ docker-compose up --build
+```
+
+## Services
+
+- **Proxy Service**: Runs on port 8080.
+- **WebSocket Listener Service**: Runs on port 8002.
+- **Command Service**: Runs on port 8001.
+- **Elasticsearch**: Runs on port 9200.
+
+## Stopping the Services
+
+To stop all services, run:
+
+```sh
+ docker-compose down
+```
+
+## Manually Running Services
+
+If you prefer to run services manually without Docker Compose, follow these steps:
+
+1. **Start Proxy Service**
+
+```sh
+ cd proxy_service
+ python proxy.py
+```
+
+2. **Start WebSocket Listener Service**
+
+```sh
+ cd websocket_listener_service
+ python -m websocket_listener_service.main
+```
+
+3. **Start Command Service**
+
+```sh
+ cd command_service
+ python -m main
+```
+EOF in path: .
+2024-08-02 12:31:47,479 custom_logger INFO Running command: cat > /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/README.md << 'EOF'
+# Proxy Services
+
+This project includes multiple services managed with Docker Compose.
+
+## Setup
+
+1. Ensure Docker and Docker Compose are installed.
+2. Clone the repository.
+3. Navigate to the project root directory.
+
+```sh
+ git clone <repository_url>
+ cd Proxy_Services
+```
+
+## Running the Services
+
+To build and start all services, run:
+
+```sh
+ docker-compose up --build
+```
+
+## Services
+
+- **Proxy Service**: Runs on port 8080.
+- **WebSocket Listener Service**: Runs on port 8002.
+- **Command Service**: Runs on port 8001.
+- **Elasticsearch**: Runs on port 9200.
+
+## Stopping the Services
+
+To stop all services, run:
+
+```sh
+ docker-compose down
+```
+
+## Manually Running Services
+
+If you prefer to run services manually without Docker Compose, follow these steps:
+
+1. **Start Proxy Service**
+
+```sh
+ cd proxy_service
+ python proxy.py
+```
+
+2. **Start WebSocket Listener Service**
+
+```sh
+ cd websocket_listener_service
+ python -m websocket_listener_service.main
+```
+
+3. **Start Command Service**
+
+```sh
+ cd command_service
+ python -m main
+```
+EOF in path: .
+2024-08-02 12:31:47,496 custom_logger INFO Command succeeded: stdout: , stderr: 
+2024-08-02 12:38:53,943 custom_logger INFO Handling command: cat /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/proxy_service/requirements.txt in path: .
+2024-08-02 12:38:53,944 custom_logger INFO Running command: cat /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/proxy_service/requirements.txt in path: .
+2024-08-02 12:38:53,969 custom_logger INFO Command succeeded: stdout: fastapi==0.65.2
+uvicorn==0.13.4
+requests==2.25.1
+pydantic==1.6.2
+PyYAML==5.4.1
+, stderr: 
+2024-08-02 12:39:11,289 custom_logger INFO Handling command: cat /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/websocket_listener_service/requirements.txt in path: .
+2024-08-02 12:39:11,290 custom_logger INFO Running command: cat /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/websocket_listener_service/requirements.txt in path: .
+2024-08-02 12:39:11,306 custom_logger INFO Command succeeded: stdout: fastapi==0.65.2
+uvicorn==0.13.4
+requests==2.25.1
+websockets==9.1
+httpx==0.16.1
+pydantic==1.6.2
+, stderr: 
+2024-08-02 12:39:28,330 custom_logger INFO Handling command: cat /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/command_service/requirements.txt in path: .
+2024-08-02 12:39:28,330 custom_logger INFO Running command: cat /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/command_service/requirements.txt in path: .
+2024-08-02 12:39:28,342 custom_logger ERROR Command execution failed: cat: /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/command_service/requirements.txt: No such file or directory
+
+2024-08-02 12:39:52,086 custom_logger INFO Handling command: echo "fastapi==0.65.2
+uvicorn==0.13.4
+requests==2.25.1
+pydantic==1.6.2" > /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/command_service/requirements.txt in path: .
+2024-08-02 12:39:52,087 custom_logger INFO Running command: echo "fastapi==0.65.2
+uvicorn==0.13.4
+requests==2.25.1
+pydantic==1.6.2" > /mnt/c/Users/Richa/PycharmProjects/Proxy_Services/command_service/requirements.txt in path: .
+2024-08-02 12:39:52,105 custom_logger INFO Command succeeded: stdout: , stderr: 
+2024-08-02 12:44:13,957 custom_logger INFO Starting the application
+2024-08-02 12:44:14,060 custom_logger INFO Entering register_service
+2024-08-02 12:44:14,062 custom_logger INFO Registering service with the proxy...{'service_name': 'command-service', 'openapi_url': 'http://0.0.0.0:8014/openapi.json', 'openapi_json': None}
+2024-08-02 12:44:14,149 custom_logger INFO Service registered successfully with the proxy.
+2024-08-02 12:44:14,150 custom_logger INFO Exiting register_service

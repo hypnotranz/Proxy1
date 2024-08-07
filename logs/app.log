@@ -1,0 +1,9 @@
+2024-07-29 17:09:43,399 custom_logger INFO Starting the application
+2024-07-29 17:09:43,513 custom_logger INFO Entering register_service
+2024-07-29 17:09:43,515 custom_logger INFO Registering service with the proxy...{'service_name': 'execute-bash', 'url': 'http://0.0.0.0:8014'}
+2024-07-29 17:09:43,827 custom_logger INFO Service registered successfully with the proxy.
+2024-07-29 17:09:43,828 custom_logger INFO Exiting register_service
+2024-07-29 17:28:25,149 custom_logger INFO Handling command: echo Hello, Proxy1! in path: .
+2024-07-29 17:28:25,151 custom_logger INFO Running command: echo Hello, Proxy1! in path: .
+2024-07-29 17:28:25,160 custom_logger INFO Command succeeded: stdout: Hello, Proxy1!
+, stderr: 

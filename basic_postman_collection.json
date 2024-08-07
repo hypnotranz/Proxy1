@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "Basic API Test",
+    "_postman_id": "basic-api-test-id",
+    "description": "A simple collection to test Newman's functionality.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test GET Request",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://postman-echo.com/get",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["get"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

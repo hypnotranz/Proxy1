@@ -1,0 +1,13 @@
+{
+  "proxy_url": "ws://localhost:8080/ws/",
+  "host": "localhost",
+  "port": 8010,
+  "service_name": "websocket-listener-service",
+  "forward_service_url": "http://localhost:8010",
+  "logging": {
+    "level": "DEBUG",
+    "format": "{asctime} {name} {levelname} {message}",
+    "sinks": ["console", "file", "elastic"],
+    "elastic_url": "http://elasticsearch:9200"
+  }
+}

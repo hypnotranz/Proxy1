@@ -1,0 +1,4 @@
+proxy_service/config.json
+venv/
+node_modules/
+__pycache__/

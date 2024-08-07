@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  proxy-service:
+    build: ./proxy_service
+    ports:
+      - "8080:8080"
+    environment:
+      - PROXY_SERVICE_IP=proxy-service
+      - ELASTIC_URL=http://elasticsearch:9200
+      - LOGGING_LEVEL=DEBUG
+    networks:
+      - proxy_network
+
+  websocket-listener-service:
+    build: ./websocket_listener_service
+    volumes:
+      - ./websocket_listener_service:/app  # Mount the local directory to the container
+    ports:
+      - "8010:8010"
+    environment:
+      - WEBSOCKET_SERVICE_IP=websocket-listener-service
+      - HOST=websocket-listener-service
+      - PORT=8010
+      - PROXY_SERVICE_IP=proxy-service
+      - ELASTIC_URL=http://elasticsearch:9200
+      - FORWARD_SERVICE_URL=http://websocket-listener-service:8010
+      - PROXY_URL=ws://proxy-service:8080/ws/
+      - LOGGING_LEVEL=DEBUG
+    depends_on:
+      - proxy-service
+    networks:
+      - proxy_network
+
+  command-service:
+    build: ./command_service
+    ports:
+      - "8014:8014"
+    environment:
+      - COMMAND_SERVICE_IP=command-service
+      - ELASTIC_URL=http://elasticsearch:9200
+      - PROXY_URL=http://websocket-listener-service:8010/register
+      - HOST=0.0.0.0
+      - PORT=8014
+      - SERVICE_NAME=command-service
+      - LOGGING_LEVEL=DEBUG
+      - LOGGING_FORMAT="{asctime} {name} {levelname} {message}"
+      - FORWARD_SERVICE_URL=http://command-service:8014
+    depends_on:
+      - websocket-listener-service
+    networks:
+      - proxy_network
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.0
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    driver: bridge

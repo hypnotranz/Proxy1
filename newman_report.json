@@ -1,0 +1,1481 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "your-postman-collection-id"
+    },
+    "item": [
+      {
+        "id": "3d694c4c-00b4-4a1f-bcca-f9684b7a765e",
+        "name": "List Available Services",
+        "description": {
+          "content": "This request lists all available services registered with the websocket-listener-service.",
+          "type": "text/plain"
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "proxy"
+            ],
+            "host": [
+              "katydid-glorious-slightly.ngrok-free.app"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"websocket-listener-service\",\n        \"endpoint_path\": \"/get_registered_services\",\n        \"endpoint_request_type\": \"GET\",\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"\n    }\n}"
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "160bb3c4-773c-475e-ae0c-472f0c4d37f8",
+        "name": "Attempt to Execute Command",
+        "description": {
+          "content": "This request attempts to execute a bash command on the command-service, which failed due to the service not being registered.",
+          "type": "text/plain"
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "proxy"
+            ],
+            "host": [
+              "katydid-glorious-slightly.ngrok-free.app"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"command-service\",\n        \"endpoint_request_type\": \"POST\",\n        \"endpoint_body\": {\n            \"command\": \"for file in $(find . -type f -name '*.py' -not -path '*/\\\\.*'); do echo $file; grep -E 'def ' $file; done\",\n            \"path\": \".\"\n        },\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\",\n        \"endpoint_path\": \"/execute-bash\"\n    }\n}"
+          }
+        },
+        "response": [],
+        "event": []
+      },
+      {
+        "id": "253503d9-84b8-4d9c-a2e6-46bced278857",
+        "name": "Verify Registered Services Again",
+        "description": {
+          "content": "This request re-verifies the registered services to ensure the current state of available services.",
+          "type": "text/plain"
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "proxy"
+            ],
+            "host": [
+              "katydid-glorious-slightly.ngrok-free.app"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"websocket-listener-service\",\n        \"endpoint_path\": \"/get_registered_services\",\n        \"endpoint_request_type\": \"GET\",\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"\n    }\n}"
+          }
+        },
+        "response": [],
+        "event": []
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "your-postman-collection-id",
+      "name": "Proxy Service API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "API for the Proxy Service to forward requests to registered services.",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "id": "d9c40d18-0517-4793-b899-25e80cc3e583",
+    "values": []
+  },
+  "globals": {
+    "id": "09b40ab3-018b-4745-8b95-7341407f13b2",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 355.6666666666667,
+      "responseMin": 187,
+      "responseMax": 693,
+      "responseSd": 238.53068752026206,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1722905632280,
+      "completed": 1722905633395
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 3,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "c38f4acc-8382-42f1-95b3-e76d6662233b",
+          "httpRequestId": "214ac882-5dba-434b-88f3-7040662fe954"
+        },
+        "item": {
+          "id": "3d694c4c-00b4-4a1f-bcca-f9684b7a765e",
+          "name": "List Available Services",
+          "description": {
+            "content": "This request lists all available services registered with the websocket-listener-service.",
+            "type": "text/plain"
+          },
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "proxy"
+              ],
+              "host": [
+                "katydid-glorious-slightly.ngrok-free.app"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"websocket-listener-service\",\n        \"endpoint_path\": \"/get_registered_services\",\n        \"endpoint_request_type\": \"GET\",\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"\n    }\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "proxy"
+            ],
+            "host": [
+              "katydid-glorious-slightly",
+              "ngrok-free",
+              "app"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.0",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "f83659ed-7315-4e6d-b777-509e9bccf557",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "katydid-glorious-slightly.ngrok-free.app",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "289",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"websocket-listener-service\",\n        \"endpoint_path\": \"/get_registered_services\",\n        \"endpoint_request_type\": \"GET\",\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"\n    }\n}"
+          }
+        },
+        "response": {
+          "id": "83abc85e-d459-4397-990d-f5068dbf48d1",
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "283"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 06 Aug 2024 00:53:52 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "uvicorn"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              34,
+              58,
+              91,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              115,
+              101,
+              114,
+              118,
+              105,
+              99,
+              101,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              44,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              112,
+              97,
+              116,
+              104,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              44,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              114,
+              101,
+              113,
+              117,
+              101,
+              115,
+              116,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              93,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 693,
+          "responseSize": 283
+        },
+        "id": "3d694c4c-00b4-4a1f-bcca-f9684b7a765e"
+      },
+      {
+        "cursor": {
+          "ref": "a1d9b1c9-309e-498d-a1fc-13966fbc65ee",
+          "length": 3,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "61ee87c8-bc9c-4dc1-be92-2b2e0f899418"
+        },
+        "item": {
+          "id": "160bb3c4-773c-475e-ae0c-472f0c4d37f8",
+          "name": "Attempt to Execute Command",
+          "description": {
+            "content": "This request attempts to execute a bash command on the command-service, which failed due to the service not being registered.",
+            "type": "text/plain"
+          },
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "proxy"
+              ],
+              "host": [
+                "katydid-glorious-slightly.ngrok-free.app"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"command-service\",\n        \"endpoint_request_type\": \"POST\",\n        \"endpoint_body\": {\n            \"command\": \"for file in $(find . -type f -name '*.py' -not -path '*/\\\\.*'); do echo $file; grep -E 'def ' $file; done\",\n            \"path\": \".\"\n        },\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\",\n        \"endpoint_path\": \"/execute-bash\"\n    }\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "proxy"
+            ],
+            "host": [
+              "katydid-glorious-slightly",
+              "ngrok-free",
+              "app"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.0",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "0e74af5b-9e10-4443-8cb6-f67a111b1998",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "katydid-glorious-slightly.ngrok-free.app",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "462",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"command-service\",\n        \"endpoint_request_type\": \"POST\",\n        \"endpoint_body\": {\n            \"command\": \"for file in $(find . -type f -name '*.py' -not -path '*/\\\\.*'); do echo $file; grep -E 'def ' $file; done\",\n            \"path\": \".\"\n        },\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\",\n        \"endpoint_path\": \"/execute-bash\"\n    }\n}"
+          }
+        },
+        "response": {
+          "id": "d971b3f1-78b8-4675-8a65-f440c2b5ca77",
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "283"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 06 Aug 2024 00:53:52 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "uvicorn"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              34,
+              58,
+              91,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              115,
+              101,
+              114,
+              118,
+              105,
+              99,
+              101,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              44,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              112,
+              97,
+              116,
+              104,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              44,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              114,
+              101,
+              113,
+              117,
+              101,
+              115,
+              116,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              93,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 187,
+          "responseSize": 283
+        },
+        "id": "160bb3c4-773c-475e-ae0c-472f0c4d37f8"
+      },
+      {
+        "cursor": {
+          "ref": "ca73f7c8-dbee-4639-bab9-31695ec6e3a5",
+          "length": 3,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "0c025f29-f850-4d57-acd6-9d5bc86fdb55"
+        },
+        "item": {
+          "id": "253503d9-84b8-4d9c-a2e6-46bced278857",
+          "name": "Verify Registered Services Again",
+          "description": {
+            "content": "This request re-verifies the registered services to ensure the current state of available services.",
+            "type": "text/plain"
+          },
+          "request": {
+            "url": {
+              "protocol": "https",
+              "path": [
+                "proxy"
+              ],
+              "host": [
+                "katydid-glorious-slightly.ngrok-free.app"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"websocket-listener-service\",\n        \"endpoint_path\": \"/get_registered_services\",\n        \"endpoint_request_type\": \"GET\",\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"\n    }\n}"
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "proxy"
+            ],
+            "host": [
+              "katydid-glorious-slightly",
+              "ngrok-free",
+              "app"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.0",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "096bd0ae-5887-4c4f-ae4d-bb5fa5f563a0",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "katydid-glorious-slightly.ngrok-free.app",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "289",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"method\": \"post\",\n    \"path\": \"/proxy\",\n    \"params\": {\n        \"endpoint_service_name\": \"websocket-listener-service\",\n        \"endpoint_path\": \"/get_registered_services\",\n        \"endpoint_request_type\": \"GET\",\n        \"connection_id\": \"4cd94429-3e01-45d8-85f2-33ebea3dad9e\"\n    }\n}"
+          }
+        },
+        "response": {
+          "id": "ad53432e-4bcd-4953-b607-dcbd525ad85c",
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "283"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 06 Aug 2024 00:53:52 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "uvicorn"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              34,
+              58,
+              91,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              115,
+              101,
+              114,
+              118,
+              105,
+              99,
+              101,
+              95,
+              110,
+              97,
+              109,
+              101,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              44,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              112,
+              97,
+              116,
+              104,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              44,
+              123,
+              34,
+              108,
+              111,
+              99,
+              34,
+              58,
+              91,
+              34,
+              98,
+              111,
+              100,
+              121,
+              34,
+              44,
+              34,
+              101,
+              110,
+              100,
+              112,
+              111,
+              105,
+              110,
+              116,
+              95,
+              114,
+              101,
+              113,
+              117,
+              101,
+              115,
+              116,
+              95,
+              116,
+              121,
+              112,
+              101,
+              34,
+              93,
+              44,
+              34,
+              109,
+              115,
+              103,
+              34,
+              58,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              32,
+              114,
+              101,
+              113,
+              117,
+              105,
+              114,
+              101,
+              100,
+              34,
+              44,
+              34,
+              116,
+              121,
+              112,
+              101,
+              34,
+              58,
+              34,
+              118,
+              97,
+              108,
+              117,
+              101,
+              95,
+              101,
+              114,
+              114,
+              111,
+              114,
+              46,
+              109,
+              105,
+              115,
+              115,
+              105,
+              110,
+              103,
+              34,
+              125,
+              93,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 187,
+          "responseSize": 283
+        },
+        "id": "253503d9-84b8-4d9c-a2e6-46bced278857"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 849
+    },
+    "failures": [],
+    "error": null
+  }
+}

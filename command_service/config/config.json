@@ -1,0 +1,14 @@
+{
+  "proxy_url": "http://localhost:8010/register",
+  "host": "0.0.0.0",
+  "port": 8014,
+  "service_name": "command-service",
+  "forward_service_url": "http://websocket-listener-service:8010",
+  "logging": {
+    "level": "INFO",
+    "format": "{asctime} - {name} - {levelname} - {message}",
+    "sinks": ["console", "file", "elastic"],
+    "elastic_url": "http://localhost:9200"
+  },
+  "bash_working_directory": "/mnt/c/Users/Richa/WebstormProjects/LDA_Template"
+}
